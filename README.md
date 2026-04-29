@@ -38,12 +38,14 @@ dnf config-manager --set-enabled crb
 ```
 
 
-using ubuntu
+# using ubuntu
+
 ```bash
 sudo apt update
 ```
 ```bash
 sudo apt install -y automake libfuse-dev gcc libcurl4-openssl-dev libxml2-dev make libssl-dev
+```
 ```bash
 dnf install -y s3fs-fuse
 ```
