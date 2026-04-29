@@ -56,5 +56,20 @@ dnf install -y epel-release
 dnf install -y s3fs-fuse
 ```
 
+make directory
 
-dnf install s3 fs 
+
+mkdir /data
+
+attach iam role attach too
+
+go to instance
+
+select server
+
+action --- security -- modify iam role
+
+select s3 full acesss-- update iam role
+
+
+
