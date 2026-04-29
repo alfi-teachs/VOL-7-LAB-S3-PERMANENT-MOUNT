@@ -3,39 +3,63 @@
 # Step 1: Create S3 Bucket
 
 Go to Amazon Web Services Console
+
 Open Amazon S3
+
 Click Create bucket
 Enter:
+
 Bucket name: my-bucket-alfia (must be unique)
+
 Region: same as EC2
+
 Keep default settings → Click Create bucket
+
 Upload File
+
 Open bucket → Click Upload
+
 Upload a file (example: index.html)
 
 # Step 2: Create IAM Role for EC2
 
 Go to AWS Identity and Access Management
+
 Click Roles → Create role
+
 Select:
 Trusted entity: AWS Service
+
 Use case: EC2
+
 Attach policy:
 AmazonS3FullAccess
+
 Role name: EC2-S3-Access
+
 Click Create role
+
 # Step 3: Launch EC2 Instance
 
 Go to Amazon EC2
+
 Click Launch instance
+
 Configure:
 Name: S3-Mount-Server
+
 AMI: Ubuntu
+
 Instance type: t2.micro
+
 Key pair: create/select
+
 Network: Default VPC
+
 Auto-assign Public IP: Enable
+
 Security Group:
+
 Allow:
 SSH (Port 22) → Anywhere (0.0.0.0/0)
 
@@ -44,10 +68,13 @@ Click Launch instance
 # Step 4: Attach IAM Role to EC2
 
 Select instance
+
 Go to:
 Actions → Security → Modify IAM Role
+
 Select:
 EC2-S3-Access
+
 Click Update IAM Role
 
 # Step 5: Connect to EC2
@@ -76,8 +103,10 @@ cd /data
 sudo s3fs my-bucket-alfia /data -o iam_role=auto
 
 What this does:
+
 my-bucket-alfia → your S3 bucket
 /data → mount point
+
 iam_role=auto → uses EC2 IAM role (no keys needed)
 
 # Step 9: Verify Mount
@@ -94,9 +123,10 @@ index.html
 That confirms your S3 bucket is mounted successfully.
 
 # Step 10: Test Sync
-Create file from EC2:
-echo "Hello from EC2" > test.txt
 
+Create file from EC2:
+
+echo "Hello from EC2" > test.txt
 
 Now check in S3 bucket → test.txt will appear.
 
