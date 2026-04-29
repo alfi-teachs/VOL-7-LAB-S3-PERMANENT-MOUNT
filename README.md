@@ -19,6 +19,7 @@ ssh 22
 lainch 
 
 connect instance
+
 ```bash
 sudo su
 ```
@@ -40,9 +41,18 @@ dnf config-manager --set-enabled crb
 using ubuntu
 ```bash
 sudo apt update
+```
 ```bash
 sudo apt install -y automake libfuse-dev gcc libcurl4-openssl-dev libxml2-dev make libssl-dev
+```bash
+dnf install -y s3fs-fuse
+```
+1f it doesn’t find the package, make sure EPEL is enabled first:
+
+```bash
+dnf install -y epel-release
+dnf install -y s3fs-fuse
+```
 
 
-install tools 
-yum 
+dnf install s3 fs 
