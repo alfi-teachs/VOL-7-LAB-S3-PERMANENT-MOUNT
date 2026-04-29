@@ -83,14 +83,31 @@ ssh -i your-key.pem ubuntu@<public-ip>
 
 # Step 6: Install s3fs and Dependencies
 
+Step 1: Update package list
 sudo apt update
 
+Step 2: Install required repo support
+sudo apt install -y software-properties-common
+
+Step 3: Enable Universe repository
+sudo add-apt-repository universe
+
+
+Press Enter when prompted.
+
+Step 4: Update again
+sudo apt update
+
+Step 5: Install s3fs
 sudo apt install -y s3fs
 
+Quick check
+which s3fs
 
-If needed (for full dependency support):
 
-sudo apt install -y automake libfuse-dev gcc libcurl4-openssl-dev libxml2-dev make libssl-dev
+If it shows something like:
+
+/usr/bin/s3fs
 
 # Step 7: Create Mount Directory
 
