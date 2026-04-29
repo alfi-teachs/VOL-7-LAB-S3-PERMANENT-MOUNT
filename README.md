@@ -83,7 +83,12 @@ s3fs <bucket-name> /mountpoint -o iam_role=auto
 s3fs my-bucket /mnt/s3 -o iam_role=auto
 ```
  
+go to s3 upload object
+ go to instance check in mount points 
 
+ cd /data
+ ls
+  we can see index.html file 
 
 
 
