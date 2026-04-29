@@ -18,25 +18,19 @@ public eanble
 ssh 22 
 lainch 
 
-connect instance
+# connect instance
 
-```bash
-sudo su
-```
+make directory
 
-```bash
-yum update
-```
-```bash
-yum install -y automake fuse-devel gcc libcurl-devel libxml2-devel make openssl-devel
-```
-```bash
-dnf install -y epel-release
-```
-```bash
-dnf config-manager --set-enabled crb
-```
+mkdir /data
 
+cd /data
+
+attach iam role attach too
+
+go to instance
+
+select server
 
 # using ubuntu
 
@@ -44,28 +38,12 @@ dnf config-manager --set-enabled crb
 sudo apt update
 ```
 ```bash
+sudo apt install -y s3fs
+``` 
+```bash
 sudo apt install -y automake libfuse-dev gcc libcurl4-openssl-dev libxml2-dev make libssl-dev
 ```
-```bash
-dnf install -y s3fs-fuse
-```
-1f it doesn’t find the package, make sure EPEL is enabled first:
 
-```bash
-dnf install -y epel-release
-dnf install -y s3fs-fuse
-```
-
-make directory
-
-
-mkdir /data
-
-attach iam role attach too
-
-go to instance
-
-select server
 
 
 connect to ec2
