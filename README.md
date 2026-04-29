@@ -85,9 +85,12 @@ s3fs my-bucket /mnt/s3 -o iam_role=auto
  
 go to s3 upload object
  go to instance check in mount points 
-
+```bash 
  cd /data
+```
+```bash
  ls
+```
   we can see index.html file 
 
 
