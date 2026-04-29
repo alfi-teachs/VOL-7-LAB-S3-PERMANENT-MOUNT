@@ -67,6 +67,39 @@ go to instance
 
 select server
 
+
+connect to ec2
+
+sudo su 
+
+cd /data
+
+mount using ths command
+```bash
+s3fs <bucket-name> /mountpoint -o iam_role=auto
+```
+
+```bash
+s3fs my-bucket /mnt/s3 -o iam_role=auto
+```
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 action --- security -- modify iam role
 
 select s3 full acesss-- update iam role
